@@ -1,12 +1,12 @@
 <template>
-  <div class="mpvue-picker">
+  <div class="univue-picker">
     <div :class="{'pickerMask':showPicker}" @click="maskClick" catchtouchmove="true"></div>
-    <div class="mpvue-picker-content " :class="{'mpvue-picker-view-show':showPicker}">
-      <div class="mpvue-picker__hd" catchtouchmove="true">
-        <div class="mpvue-picker__action" @click="pickerCancel">取消</div>
-        <div class="mpvue-picker__action" :style="{color:themeColor}" @click="pickerConfirm">确定</div>
+    <div class="univue-picker-content " :class="{'univue-picker-view-show':showPicker}">
+      <div class="univue-picker__hd" catchtouchmove="true">
+        <div class="univue-picker__action" @click="pickerCancel">取消</div>
+        <div class="univue-picker__action" :style="{color:themeColor}" @click="pickerConfirm">确定</div>
       </div>
-      <picker-view indicator-style="height: 40px;" class="mpvue-picker-view" :value="pickerValue" @change="pickerChange">
+      <picker-view indicator-style="height: 40px;" class="univue-picker-view" :value="pickerValue" @change="pickerChange">
         <block>
           <picker-view-column>
             <div class="picker-item" v-for="(item,index) in provinceDataList" :key="index">{{item.label}}</div>
@@ -148,7 +148,7 @@ export default {
   bottom: 0;
   background: rgba(0, 0, 0, 0.6);
 }
-.mpvue-picker-content {
+.univue-picker-content {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -157,10 +157,10 @@ export default {
   transform: translateY(100%);
   z-index: 3000;
 }
-.mpvue-picker-view-show {
+.univue-picker-view-show {
   transform: translateY(0);
 }
-.mpvue-picker__hd {
+.univue-picker__hd {
   display: flex;
   padding: 9px 15px;
   background-color: #fff;
@@ -168,7 +168,7 @@ export default {
   text-align: center;
   font-size: 17px;
 }
-.mpvue-picker__hd:after {
+.univue-picker__hd:after {
   content: ' ';
   position: absolute;
   left: 0;
@@ -180,16 +180,16 @@ export default {
   transform-origin: 0 100%;
   transform: scaleY(0.5);
 }
-.mpvue-picker__action {
+.univue-picker__action {
   display: block;
   flex: 1;
   color: #1aad19;
 }
-.mpvue-picker__action:first-child {
+.univue-picker__action:first-child {
   text-align: left;
   color: #888;
 }
-.mpvue-picker__action:last-child {
+.univue-picker__action:last-child {
   text-align: right;
 }
 .picker-item {
@@ -199,7 +199,7 @@ export default {
   white-space: nowrap;
   font-size: 16px;
 }
-.mpvue-picker-view {
+.univue-picker-view {
   position: relative;
   bottom: 0;
   left: 0;
